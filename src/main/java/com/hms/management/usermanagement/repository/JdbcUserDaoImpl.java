@@ -13,10 +13,10 @@ import java.util.List;
 /**
  * JdbcUserDaoImpl implements all the abstract methods in UserDao interface
  */
-@Repository
-public class JdbcUserDaoImpl implements UserDao{
+//@Repository
+public class JdbcUserDaoImpl implements UserDao {
 
-    @Autowired
+
     JdbcTemplate jdbcTemplate;
 
     public List<User> findAll() {
@@ -24,7 +24,7 @@ public class JdbcUserDaoImpl implements UserDao{
     }
 
     public User findById(long id) {
-        return jdbcTemplate.queryForObject("select * from user where id=?", new Object[] { id },
+         return jdbcTemplate.queryForObject("select * from user where id=?", new Object[] { id },
                 new UserRowMapper());
     }
 
