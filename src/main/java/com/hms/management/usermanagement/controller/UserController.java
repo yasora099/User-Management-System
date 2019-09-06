@@ -5,6 +5,7 @@ import com.hms.management.usermanagement.repository.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -59,7 +60,7 @@ public class UserController {
      * @param user is a new entry to the database
      * @return user type object
      */
-    @RequestMapping(value = "/users", method = POST)
+    @RequestMapping(value = "/users", method = POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public User createUser(@Valid @RequestBody User user){
         logger.info("received a post request from client to create user");
         repository.add(user);

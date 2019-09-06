@@ -1,16 +1,13 @@
 package com.hms.management.usermanagement.domain;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
-//@NamedQuery(name="findAllUsers", query="SELECT p FROM user p")
+@Table
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String email;

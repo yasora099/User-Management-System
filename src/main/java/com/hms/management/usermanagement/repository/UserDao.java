@@ -20,7 +20,7 @@ public interface UserDao {
      * @param id uses to uniquely identify user
      * @return User type object
      */
-    User findById(long id);
+    Object findById(long id);
 
     /**
      * delete user from the database
